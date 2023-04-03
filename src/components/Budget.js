@@ -4,7 +4,12 @@ const Budget = () => {
     const { budget } = useContext(AppContext);
     return (
         <div className='alert alert-secondary'>
-            <span>Budget: £{budget}</span>
+            <span>Budget: £</span>
+            <input
+                type="number"
+                value = {budget}
+                onChange= {(event) => handleChangeBudget(event.target.value)}
+            ></input>
         </div>
     );
 };
