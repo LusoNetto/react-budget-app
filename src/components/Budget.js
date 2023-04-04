@@ -5,10 +5,14 @@ const Budget = () => {
     const { budget } = useContext(AppContext);
 
     const handleChangeBudget = (valor) => {
-        dispatch({
-            type: "SET_BUDGET",
-            action: valor,
-        }) 
+        if(valor <= 20000){
+            dispatch({
+                type: "SET_BUDGET",
+                payload: valor,
+            }) 
+        } else {
+            alert("The value cannot exceed 20000£")
+        }
     }
 
     return (
