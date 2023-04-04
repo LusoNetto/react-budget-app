@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 const Budget = () => {
-    const { dispatch } = useContext(AppContext);
-    const { budget } = useContext(AppContext);
+    const { dispatch, budget } = useContext(AppContext);
 
     const handleChangeBudget = (valor) => {
         if(valor <= 20000){
