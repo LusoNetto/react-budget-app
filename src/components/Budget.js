@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 const Budget = () => {
-    const { dispatch, budget } = useContext(AppContext);
+    const { dispatch, budget, currency } = useContext(AppContext);
 
     const handleChangeBudget = (valor) => {
         if(valor <= 20000){
@@ -10,13 +10,13 @@ const Budget = () => {
                 payload: valor,
             }) 
         } else {
-            alert("The value cannot exceed 20000£")
+            alert(`The value cannot exceed 20000${currency}`)
         }
     }
 
     return (
         <div className='alert alert-secondary'>
-            <span>Budget: £</span>
+            <span>Budget: {currency}</span>
             <input
                 type="number"
                 value = {budget}
